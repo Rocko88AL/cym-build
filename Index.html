@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C&M Constructores | Soluciones Industriales Integrales</title>
+<style>
+/* Estilos Generales y Paleta de Colores Corporativa /
+:root {
+--primary: #1a365d; / Azul Industrial /
+--secondary: #2b6cb0; / Azul Claro /
+--accent: #dd6b20; / Naranja de Seguridad/Construcción */
+--neutral-dark: #2d3748;
+--neutral-light: #f7fafc;
+--white: #ffffff;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+color: var(--neutral-dark);
+background-color: var(--white);
+line-height: 1.6;
+}
+
+.container {
+width: 90%;
+max-width: 1200px;
+margin: 0 auto;
+padding: 40px 0;
+}
+
+/* Encabezado / Navegación */
+header {
+background-color: var(--primary);
+color: var(--white);
+position: sticky;
+top: 0;
+z-index: 1000;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px 5%;
+}
+
+.logo h1 {
+font-size: 24px;
+font-weight: bold;
+letter-spacing: 1px;
+}
+
+.logo span {
+color: var(--accent);
+}
+
+nav ul {
+display: flex;
+list-style: none;
+}
+
+nav ul li {
+margin-left: 20px;
+}
+
+nav ul li a {
+color: var(--white);
+text-decoration: none;
+font-weight: 500;
+transition: color 0.3s;
+}
+
+nav ul li a:hover {
+color: var(--accent);
+}
+
+/* Sección Hero (Principal) */
+.hero {
+background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(43, 108, 176, 0.85)), url('ruta-a-tu-imagen-de-nave.jpg') center/cover no-repeat;
+color: var(--white);
+text-align: center;
+padding: 100px 20px;
+}
+
+.hero h2 {
+font-size: 42px;
+margin-bottom: 20px;
+font-weight: 700;
+}
+
+.hero p {
+font-size: 20px;
+max-width: 800px;
+margin: 0 auto 30px auto;
+}
+
+.btn-cta {
+background-color: var(--accent);
+color: var(--white);
+padding: 12px 30px;
+text-decoration: none;
+font-weight: bold;
+border-radius: 5px;
+transition: background 0.3s;
+display: inline-block;
+}
+
+.btn-cta:hover {
+background-color: #c05621;
+}
+
+/* Sección Quiénes Somos */
+.about {
+background-color: var(--neutral-light);
+text-align: center;
+}
+
+.section-title {
+font-size: 32px;
+color: var(--primary);
+margin-bottom: 10px;
+position: relative;
+}
+
+.section-title::after {
+content: '';
+display: block;
+width: 60px;
+height: 4px;
+background-color: var(--accent);
+margin: 10px auto 0 auto;
+}
+
+.section-subtitle {
+margin-bottom: 40px;
+color: #718096;
+}
+
+/* Pilares / Servicios */
+.services-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 30px;
+margin-top: 20px;
+}
+
+.service-card {
+background: var(--white);
+padding: 30px;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+border-top: 4px solid var(--secondary);
+transition: transform 0.3s;
+}
+
+.service-card:hover {
+transform: translateY(-5px);
+border-top-color: var(--accent);
+}
+
+.service-card h3 {
+color: var(--primary);
+margin-bottom: 15px;
+font-size: 20px;
+}
+
+/* Sección de Contacto e Infraestructura */
+.footer-banner {
+background-color: var(--primary);
+color: var(--white);
+text-align: center;
+padding: 60px 20px;
+}
+
+.footer-banner h3 {
+font-size: 28px;
+margin-bottom: 20px;
+}
+
+.phone-link {
+font-size: 32px;
+color: var(--accent);
+text-decoration: none;
+font-weight: bold;
+display: block;
+margin-top: 15px;
+}
+
+footer {
+background-color: #1a202c;
+color: #a0aec0;
+text-align: center;
+padding: 20px;
+font-size: 14px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+.nav-container {
+flex-direction: column;
+}
+nav ul {
+margin-top: 15px;
+}
+.hero h2 {
+font-size: 30px;
+}
+}
+</style>
+</head>
+<body>
+
+<!-- Barra de Navegación -->
+<header>
+<div class="nav-container">
+<div class="logo">
+<h1>C&M <span>Constructores</span></h1>
+</div>
+<nav>
+<ul>
+<li><a href="#inicio">Inicio</a></li>
+<li><a href="#servicios">Servicios</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<!-- Sección Principal (Hero) -->
+<section id="inicio" class="hero">
+<h2>Soluciones Integrales para la Continuidad de tu Industria</h2>
+<p>Maximizamos la vida útil de tus instalaciones con los más altos estándares de calidad, seguridad y eficiencia.</p>
+<a href="https://wa.me/525610465795" class="btn-cta" target="_blank">Contactar a un Experto</a>
+</section>
+
+<!-- Sección de Introducción corporativa -->
+<section class="about">
+<div class="container">
+<h2 class="section-title">C&M Constructores S.A. de C.V.</h2>
+<p class="section-subtitle">Transformamos y protegemos tus espacios de trabajo. Nos especializamos en mantener tu planta operando al 100%.</p>
+</div>
+</section>
+
+<!-- Sección de Pilares de Servicio -->
+<section id="servicios" class="container">
+<h2 class="section-title" style="text-align: center;">Nuestros Cuatro Pilares Clave</h2>
+<p class="section-subtitle" style="text-align: center; margin-bottom: 50px;">Especialistas en la atención y mantenimiento estructural e industrial.</p>
+
+<div class="services-grid">
+<div class="service-card">
+<h3>Climatización Avanzada</h3>
+<p>Expertos en refrigeración, aire acondicionado y sistemas de ventilación industrial diseñados para entornos exigentes.</p>
+</div>
+<div class="service-card">
+<h3>Infraestructura y Acabados</h3>
+<p>Remodelaciones, pintura, tablaroca, señalización y mantenimiento estructural integral de naves industriales.</p>
+</div>
+<div class="service-card">
+<h3>Servicios Generales</h3>
+<p>Atención y soporte integral inmediato para solventar cualquier tipo de requerimiento operativo dentro de tu planta.</p>
+</div>
+<div class="service-card">
+<h3>Arquitectura Estratégica</h3>
+<p>Diseño arquitectónico avanzado y desarrollo completo de proyectos constructivos desde cero.</p>
+</div>
+</div>
+</section>
+
+<!-- Sección de Cierre y Contacto -->
+<section id="contacto" class="footer-banner">
+<div class="container">
+<h3>¿Listo para optimizar tus instalaciones?</h3>
+<p>Comunícate directamente con nuestro equipo técnico comercial.</p>
+<a href="tel:5610465795" class="phone-link">Tel: 56 10465795</a>
+</div>
+</section>
+
+<!-- Pie de Página -->
+<footer>
+<p>© 2026 C&M Constructores S.A. de C.V. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
