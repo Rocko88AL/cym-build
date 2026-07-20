@@ -127,9 +127,25 @@ nav ul li a:hover::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('logoSintexto.jpeg') center/contain no-repeat;
-  opacity: 0.4;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.hero-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  opacity: 0.15;
+  z-index: 1;
   animation: zoomIn 20s infinite;
+}
+
+.hero-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .hero-content {
@@ -435,8 +451,8 @@ footer {
 }
 
 @keyframes zoomIn {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.05); }
 }
 
 @media (max-width: 768px) {
@@ -455,6 +471,11 @@ footer {
   .hero {
     height: auto;
     padding: 60px 20px;
+  }
+
+  .hero-logo {
+    width: 250px;
+    height: 250px;
   }
 }
 </style>
@@ -480,6 +501,9 @@ footer {
 
 <!-- HERO -->
 <section id="inicio" class="hero">
+  <div class="hero-logo">
+    <img src="logoSintexto.jpeg" alt="C&M Especialistas en Refrigeración">
+  </div>
   <div class="hero-content">
     <h2>Soluciones Integrales de Frío Industrial & Comercial</h2>
     <p>Especialistas en refrigeración industrial con cobertura nacional. Diseño, instalación y mantenimiento de sistemas de climatización de clase mundial.</p>
