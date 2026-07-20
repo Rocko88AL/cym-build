@@ -59,20 +59,25 @@ header {
 }
 
 .logo h1 {
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 800;
-  letter-spacing: 1px;
-  background: linear-gradient(135deg, var(--white), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+.logo-main {
+  color: var(--white);
+}
+
+.logo-desc {
+  color: var(--accent);
 }
 
 .logo-subtitle {
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.5px;
-  margin-left: 0;
+  margin-left: 62px;
   margin-top: 2px;
   color: var(--accent);
 }
@@ -110,18 +115,19 @@ nav ul li a:hover::before {
 /* HERO - IMAGEN FULL WIDTH */
 .hero {
   width: 100%;
+  max-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: var(--white);
+  background: var(--primary);
 }
 
 .hero img {
   width: 100%;
   height: auto;
+  object-fit: cover;
   display: block;
-  max-width: 100%;
 }
 
 /* FEATURES */
@@ -185,7 +191,7 @@ nav ul li a:hover::before {
 }
 
 .section-title h2 {
-  font-size: 42px;
+  font-size: 38px;
   color: var(--primary);
   margin-bottom: 15px;
   font-weight: 800;
@@ -257,13 +263,25 @@ nav ul li a:hover::before {
   margin: 0 auto;
 }
 
+.testimonial-box {
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .testimonial {
   background: rgba(255,255,255,0.1);
   padding: 40px;
   border-radius: 15px;
   border-left: 5px solid var(--accent);
   backdrop-filter: blur(10px);
-  animation: fadeIn 1s ease;
+  display: none;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.testimonial.active {
+  display: block;
 }
 
 .testimonial p {
@@ -355,12 +373,12 @@ nav ul li a:hover::before {
   transition: all 0.3s;
   box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
   font-size: 16px;
-  position: relative;
 }
 
 .btn-cta:hover {
   transform: translateY(-4px);
   box-shadow: 0 15px 40px rgba(245, 158, 11, 0.4);
+  background: #1f2937;
 }
 
 /* FOOTER */
@@ -373,17 +391,37 @@ footer {
 
 /* ANIMATIONS */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
+/* RESPONSIVE MEDIA QUERIES */
 @media (max-width: 768px) {
-  nav ul {
+  .nav-container {
+    flex-direction: column;
     gap: 15px;
+    padding: 15px 5%;
+  }
+  
+  .logo {
+    text-align: center;
+  }
+  
+  .logo h1 {
+    font-size: 18px;
+  }
+  
+  nav ul {
+    gap: 20px;
+  }
+
+  .section-title h2 {
+    font-size: 30px;
   }
   
   .services-showcase {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
 }
 </style>
@@ -394,8 +432,8 @@ footer {
 <header>
   <div class="nav-container">
     <div class="logo">
-      <h1>C&M ESPECIALISTAS EN REFRIGERACION</h1>
-      <div class="logo-subtitle">Cobertura Nacional</div>
+      <h1><span class="logo-main">C&M</span> <span class="logo-desc">ESPECIALISTAS EN REFRIGERACIÓN</span></h1>
+      <div><h2><span class="logo-subtitle">Cobertura Nacional</span></h2></div>
     </div>
     <nav>
       <ul>
@@ -412,107 +450,35 @@ footer {
   <img src="logoSintexto.jpeg" alt="C&M Especialistas en Refrigeración">
 </section>
 
-<!-- FEATURES (Ahora con contenido de SERVICIOS - números 01, 02, 03, 04) -->
+<!-- FEATURES -->
+<!-- FEATURES (Ahora con Misión, Visión y Valores) -->
 <section class="features">
   <div class="container">
     <div class="section-title">
-      <h2>Nuestros Servicios Especializados</h2>
-      <p>Soluciones integrales para tu industria</p>
+      <h2>Nuestra Identidad Corporativa</h2>
+      <p>Los pilares que guían nuestro compromiso con la industria</p>
     </div>
     
-    <div class="features-grid">
+    <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+      <!-- MISIÓN -->
       <div class="feature-card">
-        <div class="feature-number">01</div>
-        <div class="feature-icon"><i class="fas fa-snowflake"></i></div>
-        <h3>Climatización Industrial</h3>
-        <p>Sistemas HVAC de última generación diseñados para garantizar el confort y la eficiencia energética en tus instalaciones. Mantenimiento preventivo y correctivo disponible 24/7.</p>
+        <div class="feature-icon"><i class="fas fa-bullseye"></i></div>
+        <h3>Misión</h3>
+        <p>Brindar soluciones integrales en climatización, mantenimiento e instalación de aires acondicionados ofreciendo un servicio confiable, puntual y eficiente, que garantice el confort, necesidades y bienestar de nuestros clientes en cada espacio.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-number">02</div>
-        <div class="feature-icon"><i class="fas fa-hammer"></i></div>
-        <h3>Infraestructura y Acabados</h3>
-        <p>Desde remodelaciones completas hasta pequeños trabajos de mantenimiento. Pintura industrial, tablaroca, señalización y restauración estructural con los más altos estándares.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-number">03</div>
-        <div class="feature-icon"><i class="fas fa-tools"></i></div>
-        <h3>Servicios Generales Integral</h3>
-        <p>Atención inmediata a cualquier emergencia operativa. Equipo disponible para resolver problemas de infraestructura, mantenimiento general y soporte técnico sin interrupciones.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-number">04</div>
-        <div class="feature-icon"><i class="fas fa-pencil-ruler"></i></div>
-        <h3>Diseño y Arquitectura</h3>
-        <p>Desarrollo integral de proyectos desde la conceptualización hasta la implementación. Diseño arquitectónico especializado en soluciones industriales modernas y funcionales.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- SERVICES (Ahora con contenido de FEATURES - Certificaciones, Equipo Experto, etc.) -->
-<section id="servicios" class="services">
-  <div class="container">
-    <div class="section-title">
-      <h2>Por Qué Elegirnos</h2>
-      <p>Más de una década entregando soluciones industriales de clase mundial</p>
-    </div>
-    
-    <div class="services-showcase">
-      <div class="service-item">
-        <div class="service-icon"><i class="fas fa-award"></i></div>
-        <div class="service-content">
-          <h3>Certificaciones</h3>
-          <p>Contamos con todas las certificaciones nacionales e internacionales requeridas</p>
-        </div>
+      <!-- VISIÓN -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-eye"></i></div>
+        <h3>Visión</h3>
+        <p>Ser empresa líder en México y Latinoamérica, en servicios de refrigeración y climatización, reconocida por su compromiso con la excelencia, la innovación tecnológica y la confianza de sus clientes.</p>
       </div>
-      <div class="service-item">
-        <div class="service-icon"><i class="fas fa-users"></i></div>
-        <div class="service-content">
-          <h3>Equipo Experto</h3>
-          <p>Profesionales con amplia experiencia en proyectos industriales complejos</p>
-        </div>
-      </div>
-      <div class="service-item">
-        <div class="service-icon"><i class="fas fa-clock"></i></div>
-        <div class="service-content">
-          <h3>Puntualidad</h3>
-          <p>Cumplimiento riguroso de cronogramas y entregas dentro de tiempo</p>
-        </div>
-      </div>
-      <div class="service-item">
-        <div class="service-icon"><i class="fas fa-handshake"></i></div>
-        <div class="service-content">
-          <h3>Atención Personalizada</h3>
-          <p>Seguimiento constante de cada proyecto desde inicio hasta finalización</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-  <div class="container">
-    <div style="text-align: center; margin-bottom: 50px;">
-      <h2 style="font-size: 42px; font-weight: 800; margin-bottom: 15px;">Lo que Dicen Nuestros Clientes</h2>
-    </div>
-    
-    <div class="testimonials-container">
-      <div class="testimonial">
-        <p>"C&M Especialistas en Refrigeración ha sido fundamental para optimizar nuestras operaciones. Su equipo es profesional, puntual y siempre disponible."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">JR</div>
-          <div class="testimonial-info">
-            <h4>Juan Rodríguez</h4>
-            <span>Gerente General, Manufacturera XYZ</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="testimonial-dots">
-        <span class="dot active" onclick="changeTestimonial(0)"></span>
-        <span class="dot" onclick="changeTestimonial(1)"></span>
-        <span class="dot" onclick="changeTestimonial(2)"></span>
+      <!-- VALORES -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-handshake"></i></div>
+        <h3>Valores</h3>
+        <p>Actuamos con ética, responsabilidad y alto nivel técnico en cada servicio respaldados por más de 30 años de experiencia , Rapidez y eficiencia, respondemos oportunamente, optimizando tiempos sin comprometer la calidad ni seguridad del trabajo. Honestidad, ofrecemos diagnósticos claros, precios justos y soluciones reales, construyendo relaciones basadas en la confianza, garantizando atención personalizada y resultados duraderos.</p>
       </div>
     </div>
   </div>
@@ -521,16 +487,38 @@ footer {
 <!-- CTA -->
 <section id="contacto" class="cta">
   <div class="container">
-    <h3>Transformemos tu Industria Juntos</h3>
-    <p>Contacta con nuestro equipo técnico especializado hoy mismo</p>
-    <a href="https://wa.me/525610465795" class="btn-cta">WhatsApp</a>
+    <h3>Transformando la Industria desde 1993</h3>
+    <p>Da click en el boton para comunicarte con nuestro equipo de expertos por WhatsApp o llamada </p>
+    <a href="https://wa.me/525610465795" class="btn-cta" target="_blank" rel="noopener noreferrer">WhatsApp: 5610465795</a>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 C&M ESPECIALISTAS EN REFRIGERACION. Todos los derechos reservados.</p>
+  <p>© 2026 C&M ESPECIALISTAS EN REFRIGERACIÓN. Todos los derechos reservados.</p>
 </footer>
+
+<script>
+let currentIdx = 0;
+const testimonials = document.querySelectorAll('.testimonial');
+const dots = document.querySelectorAll('.dot');
+let autoAdvance = setInterval(nextTestimonial, 5000);
+
+function changeTestimonial(idx) {
+  clearInterval(autoAdvance);
+  testimonials[currentIdx].classList.remove('active');
+  dots[currentIdx].classList.remove('active');
+  currentIdx = idx;
+  testimonials[currentIdx].classList.add('active');
+  dots[currentIdx].classList.add('active');
+  autoAdvance = setInterval(nextTestimonial, 5000);
+}
+
+function nextTestimonial() {
+  let nextIdx = (currentIdx + 1) % testimonials.length;
+  changeTestimonial(nextIdx);
+}
+</script>
 
 </body>
 </html>
