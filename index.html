@@ -210,6 +210,13 @@ nav ul li a:hover::before {
   font-size: 15px;
 }
 
+.feature-number {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
 /* SECTION TITLE */
 .section-title {
   text-align: center;
@@ -259,16 +266,14 @@ nav ul li a:hover::before {
   gap: 30px;
 }
 
-.service-number {
-  font-size: 60px;
-  font-weight: 800;
+.service-icon {
+  font-size: 48px;
   color: var(--accent);
-  opacity: 0.3;
-  line-height: 1;
+  flex-shrink: 0;
 }
 
 .service-content h3 {
-  font-size: 24px;
+  font-size: 22px;
   color: var(--primary);
   margin-bottom: 12px;
   font-weight: 700;
@@ -472,7 +477,7 @@ footer {
   </div>
 </section>
 
-<!-- FEATURES (Ahora con contenido de SERVICIOS) -->
+<!-- FEATURES (Ahora con contenido de SERVICIOS - números 01, 02, 03, 04) -->
 <section class="features">
   <div class="container">
     <div class="section-title">
@@ -482,21 +487,25 @@ footer {
     
     <div class="features-grid">
       <div class="feature-card">
+        <div class="feature-number">01</div>
         <div class="feature-icon"><i class="fas fa-snowflake"></i></div>
         <h3>Climatización Industrial</h3>
         <p>Sistemas HVAC de última generación diseñados para garantizar el confort y la eficiencia energética en tus instalaciones. Mantenimiento preventivo y correctivo disponible 24/7.</p>
       </div>
       <div class="feature-card">
+        <div class="feature-number">02</div>
         <div class="feature-icon"><i class="fas fa-hammer"></i></div>
         <h3>Infraestructura y Acabados</h3>
         <p>Desde remodelaciones completas hasta pequeños trabajos de mantenimiento. Pintura industrial, tablaroca, señalización y restauración estructural con los más altos estándares.</p>
       </div>
       <div class="feature-card">
+        <div class="feature-number">03</div>
         <div class="feature-icon"><i class="fas fa-tools"></i></div>
         <h3>Servicios Generales Integral</h3>
         <p>Atención inmediata a cualquier emergencia operativa. Equipo disponible para resolver problemas de infraestructura, mantenimiento general y soporte técnico sin interrupciones.</p>
       </div>
       <div class="feature-card">
+        <div class="feature-number">04</div>
         <div class="feature-icon"><i class="fas fa-pencil-ruler"></i></div>
         <h3>Diseño y Arquitectura</h3>
         <p>Desarrollo integral de proyectos desde la conceptualización hasta la implementación. Diseño arquitectónico especializado en soluciones industriales modernas y funcionales.</p>
@@ -505,41 +514,41 @@ footer {
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- SERVICES (Ahora con contenido de FEATURES - Certificaciones, Equipo Experto, etc.) -->
 <section id="servicios" class="services">
   <div class="container">
     <div class="section-title">
-      <h2>Detalles de Nuestros Servicios</h2>
-      <p>Información completa y extendida de cada solución</p>
+      <h2>Por Qué Elegirnos</h2>
+      <p>Más de una década entregando soluciones industriales de clase mundial</p>
     </div>
     
     <div class="services-showcase">
       <div class="service-item">
-        <div class="service-number">01</div>
+        <div class="service-icon"><i class="fas fa-award"></i></div>
         <div class="service-content">
-          <h3>Climatización Industrial</h3>
-          <p>Sistemas HVAC de última generación diseñados para garantizar el confort y la eficiencia energética en tus instalaciones. Mantenimiento preventivo y correctivo disponible 24/7.</p>
+          <h3>Certificaciones</h3>
+          <p>Contamos con todas las certificaciones nacionales e internacionales requeridas</p>
         </div>
       </div>
       <div class="service-item">
-        <div class="service-number">02</div>
+        <div class="service-icon"><i class="fas fa-users"></i></div>
         <div class="service-content">
-          <h3>Infraestructura y Acabados</h3>
-          <p>Desde remodelaciones completas hasta pequeños trabajos de mantenimiento. Pintura industrial, tablaroca, señalización y restauración estructural con los más altos estándares.</p>
+          <h3>Equipo Experto</h3>
+          <p>Profesionales con amplia experiencia en proyectos industriales complejos</p>
         </div>
       </div>
       <div class="service-item">
-        <div class="service-number">03</div>
+        <div class="service-icon"><i class="fas fa-clock"></i></div>
         <div class="service-content">
-          <h3>Servicios Generales Integral</h3>
-          <p>Atención inmediata a cualquier emergencia operativa. Equipo disponible para resolver problemas de infraestructura, mantenimiento general y soporte técnico sin interrupciones.</p>
+          <h3>Puntualidad</h3>
+          <p>Cumplimiento riguroso de cronogramas y entregas dentro de tiempo</p>
         </div>
       </div>
       <div class="service-item">
-        <div class="service-number">04</div>
+        <div class="service-icon"><i class="fas fa-handshake"></i></div>
         <div class="service-content">
-          <h3>Diseño y Arquitectura</h3>
-          <p>Desarrollo integral de proyectos desde la conceptualización hasta la implementación. Diseño arquitectónico especializado en soluciones industriales modernas y funcionales.</p>
+          <h3>Atención Personalizada</h3>
+          <p>Seguimiento constante de cada proyecto desde inicio hasta finalización</p>
         </div>
       </div>
     </div>
